@@ -1,4 +1,4 @@
-package ru.maruchek.kafkademo.consumer;
+package ru.maruchek.kafkademo.servise;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -18,7 +18,7 @@ import java.time.ZoneId;
 public class MessageConsumer {
 
     @KafkaListener(topics = "#{'${spring.kafka.topic}'}")
-    public void subscribeMessage(ConsumerRecord<String, UserDetails> message) throws Exception {
+    public void subscribeMessage(ConsumerRecord<String, UserDetails> message) {
         UserDetails payload = message.value();
         LocalDateTime consumedTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(message.timestamp()),
                 ZoneId.systemDefault());
