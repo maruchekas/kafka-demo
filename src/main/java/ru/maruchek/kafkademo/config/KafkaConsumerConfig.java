@@ -15,9 +15,6 @@ import java.util.HashMap;
 @Configuration
 public class KafkaConsumerConfig {
 
-    public static final String TOPIC_NAME = "exmpl_gen_topic";
-
-
     @Value("${spring.kafka.bootstrap-servers}")
     private String addresses;
     @Value("${spring.kafka.consumer.group-id}")
