@@ -10,7 +10,6 @@ import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
-import org.springframework.util.concurrent.ListenableFutureCallback;
 import ru.maruchek.kafkademo.model.StringCallbackListener;
 
 import java.util.HashMap;
@@ -24,7 +23,7 @@ public class KafkaProducerConfig {
     @Bean
     public NewTopic example() {
         return TopicBuilder.name(TOPIC_NAME)
-                .partitions(10)
+                .partitions(6)
                 .replicas(1)
                 .build();
     }
