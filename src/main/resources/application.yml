@@ -3,5 +3,5 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: 'localhost:29092'
+    bootstrap-servers: localhost:29092
 
